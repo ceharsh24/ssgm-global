@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import { transactions } from '../data/data.json';
 import intersectionBy from 'lodash/intersectionBy';
 import './App.scss';
 
+import { Header } from './Header/Header';
 import { FilterList } from './FilterList/FilterList';
 import { TransactionTable } from './TransactionTable/TransactionTable';
 import { TransactionTableColumn } from './TransactionTable/TransactionTableColumn';
+import { TransactionDetails } from './TransactionDetails/TransactionDetails';
 
 const App = () => {
   const [allTransactions, setAllTransactions] = useState([]);
@@ -104,19 +106,31 @@ const App = () => {
   return (
     <BrowserRouter>
       <Container>
-        <h1>Basic Setup</h1>
-        <Row>
-          <Col md={2}>
-            <div className="filter-list-header">Filters</div>
-            <FilterList filters={allFilterTypes} handleFilter={handleFilter} />
-          </Col>
-          <Col md={10}>
-            <TransactionTable
-              columns={TransactionTableColumn}
-              data={tableData}
-            />
-          </Col>
-        </Row>
+        <Header />
+
+        <Route path="/" exact>
+          <Row>
+            <Col md={2}>
+              <div className="filter-list-header">Filters</div>
+              <FilterList
+                filters={allFilterTypes}
+                handleFilter={handleFilter}
+              />
+            </Col>
+            <Col md={10}>
+              <TransactionTable
+                columns={TransactionTableColumn}
+                data={tableData}
+              />
+            </Col>
+          </Row>
+        </Route>
+
+        <Route
+          path="/transaction/:accountno"
+          exact
+          component={TransactionDetails}
+        ></Route>
       </Container>
     </BrowserRouter>
   );

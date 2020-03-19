@@ -1,0 +1,14 @@
+@import '../../index.scss';
+
+.transaction-details {
+  line-height: 25px;
+  .-header {
+    font-weight: $font-weight-medium;
+    font-size: $font-size-light;
+  }
+
+  .-body {
+    font-weight: $font-weight-light;
+    font-size: $font-size-light;
+  }
+}

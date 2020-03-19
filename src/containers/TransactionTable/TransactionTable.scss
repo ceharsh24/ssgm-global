@@ -9,6 +9,10 @@
     font-weight: $font-weight-medium;
     font-size: $font-size-medium;
   }
+
+  .-body-row {
+    line-height: 20px;
+  }
 }
 
 .pagination {

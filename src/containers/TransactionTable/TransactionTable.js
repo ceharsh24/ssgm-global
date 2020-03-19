@@ -48,7 +48,7 @@ export const TransactionTable = ({ columns, data }) => {
           {page.map((row, i) => {
             prepareRow(row);
             return (
-              <tr key={row.id}>
+              <tr key={row.id} className="-body-row">
                 {row.cells.map(cell => {
                   return (
                     <td {...cell.getCellProps()} key={cell.value}>
