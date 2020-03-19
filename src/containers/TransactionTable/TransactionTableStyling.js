@@ -13,6 +13,7 @@ export const TransactionTableLink = values => {
           values
         }
       }}
+      className="transaction-table-link"
     >
       {values.account}
     </Link>
