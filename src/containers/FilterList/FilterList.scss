@@ -1,0 +1,18 @@
+@import '../App.scss';
+
+.filter-type {
+  background-color: rgb(241, 241, 241);
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  font-weight: $font-weight-light;
+  font-size: $font-size-light;
+
+  .form-label {
+    font-weight: $font-weight-medium;
+  }
+
+  .form-group {
+    margin-bottom: 5px;
+  }
+}

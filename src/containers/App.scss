@@ -1,4 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto:330,500');
+@import '../index.scss';
 
-$font-weight-light: 300;
-$font-weight-medium: 500;
+.filter-list-header {
+  font-size: $font-size-medium;
+  font-weight: $font-weight-medium;
+  margin-bottom: 10px;
+}

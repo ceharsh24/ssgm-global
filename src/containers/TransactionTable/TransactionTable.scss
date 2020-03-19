@@ -1,0 +1,22 @@
+@import '../../index.scss';
+
+.transaction-table {
+  width: 100%;
+  font-weight: $font-weight-light;
+  font-size: $font-size-light;
+
+  .-header {
+    font-weight: $font-weight-medium;
+    font-size: $font-size-medium;
+  }
+}
+
+.pagination {
+  padding: 20px 0px;
+  font-weight: $font-weight-light;
+  font-size: $font-size-light;
+
+  .-input-page {
+    width: 45px;
+  }
+}
