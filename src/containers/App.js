@@ -5,11 +5,11 @@ import intersectionBy from 'lodash/intersectionBy';
 import { transactions } from '../data/data.json';
 import './App.scss';
 
-import { Header } from './Header/Header';
-import { FilterList } from './FilterList/FilterList';
-import { TransactionTable } from './TransactionTable/TransactionTable';
-import { TransactionTableColumn } from './TransactionTable/TransactionTableColumn';
-import { TransactionDetails } from './TransactionDetails/TransactionDetails';
+import Header from './Header/Header';
+import FilterList from './FilterList/FilterList';
+import TransactionTable from './TransactionTable/TransactionTable';
+import TransactionTableColumn from './TransactionTable/TransactionTableColumn';
+import TransactionDetails from './TransactionDetails/TransactionDetails';
 
 const App = () => {
   const [allTransactions, setAllTransactions] = useState([]);

@@ -1,10 +1,10 @@
 import React, { Fragment } from 'react';
 import { Form } from 'react-bootstrap';
 
-import { TextModifier } from '../../utils/textModifier';
+import TextModifier from '../../utils/textModifier';
 import './FilterList.scss';
 
-export const FilterList = ({ filters, handleFilter }) => {
+const FilterList = ({ filters, handleFilter }) => {
   const handleInputChange = ({ target }) => {
     const { checked } = target;
     const { value } = target;
@@ -37,3 +37,5 @@ export const FilterList = ({ filters, handleFilter }) => {
     </Fragment>
   ));
 };
+
+export default FilterList;

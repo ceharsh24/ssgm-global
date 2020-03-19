@@ -3,7 +3,7 @@ import {
   TransactionTypeModifier
 } from './TransactionTableStyling';
 
-export const TransactionTableColumn = [
+const TransactionTableColumn = [
   {
     Header: 'Account No.',
     accessor: 'account',
@@ -27,3 +27,5 @@ export const TransactionTableColumn = [
     Cell: ({ row }) => TransactionTypeModifier(row.values)
   }
 ];
+
+export default TransactionTableColumn;

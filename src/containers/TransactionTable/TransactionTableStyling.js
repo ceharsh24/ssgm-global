@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { TextModifier } from '../../utils/textModifier';
+import TextModifier from '../../utils/textModifier';
 
 import './TransactionTable.scss';
 

@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 import './TransactionTable.scss';
 
-export const TransactionTable = ({ columns, data }) => {
+const TransactionTable = ({ columns, data }) => {
   const {
     headers,
     prepareRow,
@@ -128,3 +128,5 @@ TransactionTable.propTypes = {
   columns: PropTypes.array.isRequired,
   data: PropTypes.array.isRequired
 };
+
+export default TransactionTable;

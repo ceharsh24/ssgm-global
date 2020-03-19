@@ -1,11 +1,11 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { TextModifier } from '../../utils/textModifier';
+import TextModifier from '../../utils/textModifier';
 
 import './TransactionDetails.scss';
 
-export const TransactionDetails = () => {
+const TransactionDetails = () => {
   const { state } = useLocation();
   const { values } = state;
   return Object.keys(values).map(eachKey => (
@@ -19,3 +19,5 @@ export const TransactionDetails = () => {
     </div>
   ));
 };
+
+export default TransactionDetails;

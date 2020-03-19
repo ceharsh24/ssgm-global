@@ -3,7 +3,7 @@ import { useLocation } from 'react-router-dom';
 
 import './Header.scss';
 
-export const Header = () => {
+const Header = () => {
   const { pathname } = useLocation();
   const pathNameArr = pathname.split('/');
   return (
@@ -17,3 +17,5 @@ export const Header = () => {
     </>
   );
 };
+
+export default Header;
