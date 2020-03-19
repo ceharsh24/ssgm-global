@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { BrowserRouter, Route } from 'react-router-dom';
-import { transactions } from '../data/data.json';
 import intersectionBy from 'lodash/intersectionBy';
+import { transactions } from '../data/data.json';
 import './App.scss';
 
 import { Header } from './Header/Header';
@@ -48,15 +48,15 @@ const App = () => {
     setTableData(transactions);
   }, []);
 
-  const updateTableData = filterObject => {
+  const updateTableData = filter => {
     let accountNameFilter = [];
     let transactionTypeFilter = [];
     let combinedData = [];
-    if (Object.keys(filterObject).length === 0) {
+    if (Object.keys(filter).length === 0) {
       combinedData = [...allTransactions];
     } else {
-      Object.keys(filterObject).forEach(eachFilter => {
-        switch (filterObject[eachFilter]) {
+      Object.keys(filter).forEach(eachFilter => {
+        switch (filter[eachFilter]) {
           case 'accountName': {
             accountNameFilter = [
               ...accountNameFilter,
@@ -93,8 +93,8 @@ const App = () => {
   };
 
   const handleFilter = (name, value, checked) => {
-    let filterObj = filterObject;
-    if (checked && !filterObj.hasOwnProperty(name)) {
+    const filterObj = filterObject;
+    if (checked && !Object.prototype.hasOwnProperty.call(filterObj, 'name')) {
       filterObj[name] = value;
     } else {
       delete filterObj[name];
@@ -130,7 +130,7 @@ const App = () => {
           path="/transaction/:accountno"
           exact
           component={TransactionDetails}
-        ></Route>
+        />
       </Container>
     </BrowserRouter>
   );
