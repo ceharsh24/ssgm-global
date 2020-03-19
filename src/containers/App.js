@@ -10,6 +10,7 @@ import FilterList from './FilterList/FilterList';
 import TransactionTable from './TransactionTable/TransactionTable';
 import TransactionTableColumn from './TransactionTable/TransactionTableColumn';
 import TransactionDetails from './TransactionDetails/TransactionDetails';
+import SearchBar from './SearchBar/SearchBar';
 
 const App = () => {
   const [allTransactions, setAllTransactions] = useState([]);
@@ -103,12 +104,20 @@ const App = () => {
     updateTableData(filterObj);
   };
 
+  const handleSearchSubmit = searchInput => {
+    const filteredData = allTransactions.filter(eachData =>
+      eachData.account.includes(searchInput)
+    );
+    setTableData(filteredData);
+  };
+
   return (
     <BrowserRouter>
       <Container>
         <Header />
 
         <Route path="/" exact>
+          <SearchBar handleSearchSubmit={handleSearchSubmit} />
           <Row>
             <Col md={2}>
               <div className="filter-list-header">Filters</div>
